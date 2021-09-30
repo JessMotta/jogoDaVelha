@@ -1,8 +1,8 @@
 body {
   text-align: center;
- /*  background-image: url("../assets/images/logo_2.png");
+  background-image: url("../assets/images/background_final.png");
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 
 #logo{
@@ -75,3 +75,12 @@ h1 {
   background-color: #ffb366;
   cursor: pointer;
 }
+
+/* 
+input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-items: center;
+    float: right;
+} */
