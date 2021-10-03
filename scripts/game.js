@@ -3,6 +3,7 @@
 let board = ["", "", "", "", "", "", "", "", ""];
 let playerTime = 0;
 let gameOver = false;
+let drawGame = false;
 
 let symbols = ["o", "x"];
 
@@ -45,13 +46,20 @@ function handleMove(position) {
     return gameOver;
   }
 }
+
 function isWin() {
   for (let i = 0; i < winStates.length; i++) {
     let seq = winStates[i];
     // aqui vai identificar o primeiro index de cada array, no primeiro é o 0, no segundo é 1
     let pos1 = seq[0];
     let pos2 = seq[1];
-    let pos3 = seq[2];
+    let pos3 = seq[2]; /* 
+    let pos4 = seq[3];
+    let pos5 = seq[4];
+    let pos6 = seq[5];
+    let pos7 = seq[6];
+    let pos8 = seq[7];
+    let pos9 = seq[8]; */
 
     // faz a checagem se as posições são iguais excluindo a posição vazia do início do jogo
     if (
