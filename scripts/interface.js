@@ -6,9 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 function handleClick(event) {
+  // verifica o nome dos jogadores
+  let player1 = document.getElementById("player1");
+  let player2 = document.getElementById("player2");
+  let player1Name = player1.value;
+  let player2Name = player2.value;
+
   let square = event.target;
   let position = square.id;
 
@@ -17,17 +21,17 @@ function handleClick(event) {
   if (handleMove(position)) {
     // a mensagem vai aparecer 10ms depois da ultima jogada, assim o ultimo objeto adicionado aparece na tela, se não colocar o timeout a msg aparece mas o objeto não
     if (playerTime == 0) {
-      playerName = "escudo";
+      playerName = player1Name;
     } else {
-      playerName = "espada";
+      playerName = player2Name;
     }
     setTimeout(() => {
       alert("O jogo acabou! \n O vencedor foi " + playerName);
-    }, 10);
+    }, 20);
+  } else if (drawGame) {
+    alert("O jogo empatou! Tentem novamente!");
   }
   updateSquare(position);
-
-  //   updateSquares();
 }
 
 // atualiza apenas o quadrado
@@ -48,5 +52,4 @@ function updateSquares() {
     }
   });
   alert("Jogo reiniciado");
-  
 }

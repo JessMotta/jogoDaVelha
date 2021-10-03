@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-image: url("../assets/images/background_final.png");
+  background-image: url("../assets/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -104,4 +104,6 @@ input {
   width: 150px;
   height: 20px;
   text-align: center;
+  border: 2px solid #5c159d;
+  font-size: 16px;
 }
