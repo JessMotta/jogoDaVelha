@@ -9,7 +9,7 @@
 
 ## Descritivo :bookmark_tabs:
 
-Esse projeto foi realizado como parte do curso Desenvolvimento Full Stack e  teve como finalidade criar o jogo da velha.
+Esse projeto foi realizado como parte do curso Desenvolvimento Full Stack e  teve como finalidade criar o jogo da velha com botão para reiniciar o jogo.
 
 <div style="display: inline_block"><br>
   
