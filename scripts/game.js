@@ -3,7 +3,7 @@
 let board = ["", "", "", "", "", "", "", "", ""];
 let playerTime = 0;
 let gameOver = false;
-let drawGame = false
+let drawGame = false;
 
 let symbols = ["o", "x"];
 
@@ -47,12 +47,6 @@ function handleMove(position) {
   }
 }
 
-function checkDraw() {
-  return Object.keys(board).every((position) => {
-    return board[position] != "";
-  });
-
-}
 function isWin() {
   for (let i = 0; i < winStates.length; i++) {
     let seq = winStates[i];
@@ -74,16 +68,10 @@ function isWin() {
       board[pos1] != ""
     ) {
       return true;
-    } 
+    }
   }
 
   return false;
-}
-
-if (checkDraw() && !isWin()) {
-  drawGame = true
-  console.log("aqui");
-
 }
 
 function restartGame() {

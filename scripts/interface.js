@@ -20,16 +20,26 @@ function handleClick(event) {
 
   if (handleMove(position)) {
     // a mensagem vai aparecer 10ms depois da ultima jogada, assim o ultimo objeto adicionado aparece na tela, se não colocar o timeout a msg aparece mas o objeto não
+    if(player1Name != "" || player2Name != ""){
     if (playerTime == 0) {
       playerName = player1Name;
     } else {
       playerName = player2Name;
     }
-    setTimeout(() => {
-      alert("O jogo acabou! \n O vencedor foi " + playerName);
-    }, 20);
-  } else if (drawGame) {
-    alert("O jogo empatou! Tentem novamente!");
+   
+      setTimeout(() => {
+        alert("O jogo acabou! \n O vencedor foi " + playerName);
+      }, 20);}
+    else if(player1Name == "" || player2Name == ""){  
+      if (playerTime == 0) {
+      playerName = "O";
+    } else {
+      playerName = "X";
+    }
+   
+      setTimeout(() => {
+        alert("O jogo acabou! \n O vencedor foi " + playerName);
+      }, 20);}
   }
   updateSquare(position);
 }

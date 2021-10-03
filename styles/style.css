@@ -16,7 +16,6 @@ h1 {
   color: white;
 }
 
-
 /* .stage{
    align-content: center; 
 } */
@@ -96,7 +95,7 @@ h1 {
   bottom: 0;
   right: 0;
   left: 0;
- transform: translate(-100%, -310%);
+  transform: translate(-100%, -310%);
 }
 
 input {
@@ -108,9 +107,8 @@ input {
   font-size: 16px;
 }
 
-
 /* responsividade para mobile */
-@media  (max-width: 1112px){
+@media (max-width: 1112px) {
   body {
     /* text-align: center; */
     background-image: url("../assets/images/background_mobile.png");
@@ -122,10 +120,12 @@ input {
     height: 20vh;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 10px;
   }
 
-  .players{
-   transform: translate(-10%, -400%);
+  .players {
+    transform: translate(-10%, -420%);
+  }
+  .stage{
+    margin-top: 50px;
   }
 }
