@@ -107,3 +107,25 @@ input {
   border: 2px solid #5c159d;
   font-size: 16px;
 }
+
+
+/* responsividade para mobile */
+@media  (max-width: 1112px){
+  body {
+    /* text-align: center; */
+    background-image: url("../assets/images/background_mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #logo {
+    height: 20vh;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .players{
+   transform: translate(-10%, -400%);
+  }
+}
