@@ -61,6 +61,12 @@ function handleClick(event) {
       }, 20);
     }
   }
+  if ((countTurn0 >= 5 || countTurn1 >= 5) && !gameOver) {
+    console.log("funcionou!!!");
+    setTimeout(() => {
+      alert("O jogo empatou!");
+    }, 20);
+  }
   updateSquare(position);
 }
 
