@@ -31,6 +31,7 @@ function handleClick(event) {
 
   let playerName = "";
 
+
   if (handleMove(position)) {
     // identifica e pontua o vencedor
     if (playerTime == 0) {
@@ -40,6 +41,7 @@ function handleClick(event) {
       ctPlayer2++;
       player2Wins.innerHTML = ctPlayer2;
     }
+
 
     // a mensagem vai aparecer 10ms depois da ultima jogada, assim o ultimo objeto adicionado aparece na tela, se não colocar o timeout a msg aparece mas o objeto não
     if (player1Name != "" || player2Name != "") {
@@ -66,7 +68,7 @@ function handleClick(event) {
   }
   // verifica se houve empate no jogo
   if ((countTurn0 >= 5 || countTurn1 >= 5) && !gameOver) {
-
+    console.log(playerTime)
     setTimeout(() => {
       alert("O jogo empatou!");
     }, 20);

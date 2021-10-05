@@ -5,6 +5,9 @@ let playerTime = 0;
 let gameOver = false;
 let tieGame = false;
 
+// começa o jogador 1
+let firstPlayer = 0;
+
 let symbols = ["o", "x"];
 
 let winStates = [
@@ -77,10 +80,12 @@ function restartGame() {
   // reiniciar as variáveis
   board = ["", "", "", "", "", "", "", "", ""];
   // troca quem começa a partida no jogo seguinte
-  if( playerTime == 0){
-    playerTime = 1
-  } else{
-    playerTime = 0
+  if (firstPlayer == 0) {
+    playerTime = 1;
+    firstPlayer = 1;
+  } else {
+    playerTime = 0;
+    firstPlayer = 0;
   }
   gameOver = false;
   tieGame = false;
