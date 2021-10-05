@@ -3,7 +3,7 @@
 let board = ["", "", "", "", "", "", "", "", ""];
 let playerTime = 0;
 let gameOver = false;
-let drawGame = false;
+let tieGame = false;
 
 let symbols = ["o", "x"];
 
@@ -23,6 +23,9 @@ let winStates = [
   [2, 4, 6],
 ];
 
+let countTurn0 = 0;
+let countTurn1 = 0;
+
 function handleMove(position) {
   if (gameOver) {
     return;
@@ -35,13 +38,14 @@ function handleMove(position) {
 
     // a mesma coisa que gameOver == false
     if (!gameOver) {
-      playerTime = playerTime == 0 ? 1 : 0;
-      // irá trocar a vez entre os players
-      //   if (playerTime == 0) {
-      //     playerTime = 1;
-      //   } else {
-      //     playerTime = 0;
-      //   }
+      // playerTime = playerTime == 0 ? 1 : 0;
+      if (playerTime == 0) {
+        countTurn0++;
+        playerTime = 1;
+      } else {
+        countTurn1++;
+        playerTime = 0;
+      }
     }
     return gameOver;
   }
@@ -53,13 +57,7 @@ function isWin() {
     // aqui vai identificar o primeiro index de cada array, no primeiro é o 0, no segundo é 1
     let pos1 = seq[0];
     let pos2 = seq[1];
-    let pos3 = seq[2]; /* 
-    let pos4 = seq[3];
-    let pos5 = seq[4];
-    let pos6 = seq[5];
-    let pos7 = seq[6];
-    let pos8 = seq[7];
-    let pos9 = seq[8]; */
+    let pos3 = seq[2];
 
     // faz a checagem se as posições são iguais excluindo a posição vazia do início do jogo
     if (
@@ -79,5 +77,8 @@ function restartGame() {
   board = ["", "", "", "", "", "", "", "", ""];
   playerTime = 0;
   gameOver = false;
+  tieGame = false;
+  countTurn0 = 0;
+  countTurn1 = 0;
   updateSquares();
 }

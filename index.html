@@ -42,11 +42,17 @@
 
     <div class="container">
         <div class="players">
+            <h1>Jogadores</h1>
             <input id="player1" type="text" placeholder="Jogador 1">
             <input id="player2" type="text" placeholder="Jogador 2">
         </div>
         <!-- <button id="btnStart" onclick="startGame()">Iniciar</button> -->
-
+        <div class="numberOfWins">
+            <h1>Pontuação</h1>
+            <h2 id="player1Wins"></h2>
+            <h2 id="player2Wins"></h2>
+        </div>
+        <button id="btnRestartWins" onclick="restartWins()"> Resetar Pontuação</button>
     </div>
 
 

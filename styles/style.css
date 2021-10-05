@@ -3,6 +3,7 @@ body {
   background-image: url("../assets/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #logo {
@@ -10,10 +11,15 @@ body {
 }
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
   margin-top: 50px;
-  margin-bottom: 40px;
-  color: white;
+  margin-bottom: 20px;
+  color: #5c159d;
+  font-size: 24px;
+}
+
+h2 {
+  color: #5c159d;
+  margin: 20px;
 }
 
 /* .stage{
@@ -63,7 +69,8 @@ h1 {
   right: 0;
 }
 
-#btnRestart {
+#btnRestart,
+#btnRestartWins {
   width: 150px;
   height: 50px;
   margin-top: 20px;
@@ -74,15 +81,27 @@ h1 {
   border-radius: 10px;
 }
 
-#btnRestart:hover {
+#btnRestart:hover,
+#btnRestartWins:hover {
   transition: 0.5s;
   background-color: #ffb366;
   cursor: pointer;
 }
 
-/* .container {
-  position: absolute;
+/* .container{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
   align-items: center;
+  margin: auto;
+  width: 50vw;
+} */
+/* .player, .numberOfWins{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
 } */
 
 .players {
@@ -95,7 +114,7 @@ h1 {
   bottom: 0;
   right: 0;
   left: 0;
-  transform: translate(-100%, -310%);
+  transform: translate(-120%, -200%);
 }
 
 input {
@@ -104,9 +123,28 @@ input {
   height: 20px;
   text-align: center;
   border: 2px solid #5c159d;
+  border-radius: 5px;
   font-size: 16px;
 }
 
+.numberOfWins {
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 100px; */
+  position: relative;
+  float: right;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translate(100%, -198%);
+}
+
+#btnRestartWins {
+  position: relative;
+  float: right;
+  transform: translate(100%, -300%);
+}
 /* responsividade para mobile */
 @media (max-width: 1112px) {
   body {
@@ -125,7 +163,7 @@ input {
   .players {
     transform: translate(-10%, -420%);
   }
-  .stage{
+  .stage {
     margin-top: 50px;
   }
 }
