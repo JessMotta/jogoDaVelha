@@ -4,7 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   squares.forEach((square) => {
     square.addEventListener("click", handleClick);
   });
+
+  // id de pontuação inicial dos jogadores quando a página é carregada
+  var player1Wins = document.getElementById("player1Wins");
+  var player2Wins = document.getElementById("player2Wins");
+  player1Wins.innerHTML = 0;
+  player2Wins.innerHTML = 0;
 });
+
+// zera a pontuação dos players
+let ctPlayer1 = 0;
+let ctPlayer2 = 0;
 
 function handleClick(event) {
   // verifica o nome dos jogadores
@@ -19,27 +29,37 @@ function handleClick(event) {
   let playerName = "";
 
   if (handleMove(position)) {
-    // a mensagem vai aparecer 10ms depois da ultima jogada, assim o ultimo objeto adicionado aparece na tela, se não colocar o timeout a msg aparece mas o objeto não
-    if(player1Name != "" || player2Name != ""){
     if (playerTime == 0) {
-      playerName = player1Name;
+      ctPlayer1++;
+      console.log(ctPlayer1);
+      player1Wins.innerHTML = ctPlayer1;
     } else {
-      playerName = player2Name;
+      ctPlayer2++;
+      player2Wins.innerHTML = ctPlayer2;
     }
-   
-      setTimeout(() => {
-        alert("O jogo acabou! \n O vencedor foi " + playerName);
-      }, 20);}
-    else if(player1Name == "" || player2Name == ""){  
+
+    // a mensagem vai aparecer 10ms depois da ultima jogada, assim o ultimo objeto adicionado aparece na tela, se não colocar o timeout a msg aparece mas o objeto não
+    if (player1Name != "" || player2Name != "") {
       if (playerTime == 0) {
-      playerName = "O";
-    } else {
-      playerName = "X";
-    }
-   
+        playerName = player1Name;
+      } else {
+        playerName = player2Name;
+      }
+
       setTimeout(() => {
         alert("O jogo acabou! \n O vencedor foi " + playerName);
-      }, 20);}
+      }, 20);
+    } else if (player1Name == "" || player2Name == "") {
+      if (playerTime == 0) {
+        playerName = "O";
+      } else {
+        playerName = "X";
+      }
+
+      setTimeout(() => {
+        alert("O jogo acabou! \n O vencedor foi " + playerName);
+      }, 20);
+    }
   }
   updateSquare(position);
 }
