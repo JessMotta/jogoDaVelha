@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 let ctPlayer1 = 0;
 let ctPlayer2 = 0;
 
+
+// salvar o vencedor da partida pa
+
 function handleClick(event) {
   // verifica o nome dos jogadores
   let player1 = document.getElementById("player1");
@@ -61,8 +64,9 @@ function handleClick(event) {
       }, 20);
     }
   }
+  // verifica se houve empate no jogo
   if ((countTurn0 >= 5 || countTurn1 >= 5) && !gameOver) {
-    console.log("funcionou!!!");
+
     setTimeout(() => {
       alert("O jogo empatou!");
     }, 20);

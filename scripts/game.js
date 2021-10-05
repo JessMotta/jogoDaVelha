@@ -39,6 +39,7 @@ function handleMove(position) {
     // a mesma coisa que gameOver == false
     if (!gameOver) {
       // playerTime = playerTime == 0 ? 1 : 0;
+      // alterna entre a vez de cada jogador e conta o numero de pinos de cada jogador no jogo
       if (playerTime == 0) {
         countTurn0++;
         playerTime = 1;
@@ -75,6 +76,7 @@ function isWin() {
 function restartGame() {
   // reiniciar as variáveis
   board = ["", "", "", "", "", "", "", "", ""];
+  // troca quem começa a partida no jogo seguinte
   playerTime = 0;
   gameOver = false;
   tieGame = false;
