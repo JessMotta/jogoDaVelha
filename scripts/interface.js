@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // id de pontuação inicial dos jogadores quando a página é carregada
-  var player1Wins = document.getElementById("player1Wins");
-  var player2Wins = document.getElementById("player2Wins");
+  let player1Wins = document.getElementById("player1Wins");
+  let player2Wins = document.getElementById("player2Wins");
   player1Wins.innerHTML = 0;
   player2Wins.innerHTML = 0;
 });
@@ -29,9 +29,9 @@ function handleClick(event) {
   let playerName = "";
 
   if (handleMove(position)) {
+    // identifica e pontua o vencedor
     if (playerTime == 0) {
       ctPlayer1++;
-      console.log(ctPlayer1);
       player1Wins.innerHTML = ctPlayer1;
     } else {
       ctPlayer2++;
@@ -82,4 +82,12 @@ function updateSquares() {
     }
   });
   alert("Jogo reiniciado");
+}
+
+// reseta as pontuações e limpa as variáveis ctPlayer1 e ctPlayer2
+function restartWins() {
+  ctPlayer1 = 0;
+  ctPlayer2 = 0;
+  player1Wins.innerHTML = ctPlayer1;
+  player2Wins.innerHTML = ctPlayer2;
 }

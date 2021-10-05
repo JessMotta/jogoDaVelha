@@ -5,6 +5,7 @@ let playerTime = 0;
 let gameOver = false;
 let drawGame = false;
 
+
 let symbols = ["o", "x"];
 
 let winStates = [
@@ -23,6 +24,9 @@ let winStates = [
   [2, 4, 6],
 ];
 
+let countTurn0 = 0;
+let countTurn1 = 0;
+
 function handleMove(position) {
   if (gameOver) {
     return;
@@ -36,6 +40,11 @@ function handleMove(position) {
     // a mesma coisa que gameOver == false
     if (!gameOver) {
       playerTime = playerTime == 0 ? 1 : 0;
+      if (playerTime == 0) {
+        countTurn0++;
+      } else {
+        countTurn1++;
+      }
       // irá trocar a vez entre os players
       //   if (playerTime == 0) {
       //     playerTime = 1;
@@ -68,11 +77,19 @@ function isWin() {
       board[pos1] != ""
     ) {
       return true;
+    // } else if((countTurn0 >= 5 || countTurn1 >= 5) && !gameOver){
+    //   console.log("funcionou!!!")
+    //   setTimeout(() => {
+    //     alert("O jogo empatou!");
+    //   }, 20);
     }
   }
 
   return false;
 }
+
+
+
 
 function restartGame() {
   // reiniciar as variáveis
