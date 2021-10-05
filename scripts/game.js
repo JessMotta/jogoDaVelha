@@ -77,7 +77,11 @@ function restartGame() {
   // reiniciar as variáveis
   board = ["", "", "", "", "", "", "", "", ""];
   // troca quem começa a partida no jogo seguinte
-  playerTime = 0;
+  if( playerTime == 0){
+    playerTime = 1
+  } else{
+    playerTime = 0
+  }
   gameOver = false;
   tieGame = false;
   countTurn0 = 0;

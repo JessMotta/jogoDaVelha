@@ -100,4 +100,6 @@ function restartWins() {
   ctPlayer2 = 0;
   player1Wins.innerHTML = ctPlayer1;
   player2Wins.innerHTML = ctPlayer2;
+  // verificar se vale a pena deixar chamando a função de reiniciar o jogo
+  // restartGame();
 }
