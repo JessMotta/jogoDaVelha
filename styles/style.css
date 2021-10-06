@@ -7,7 +7,7 @@ body {
 }
 
 #logo {
-  height: 25vh;
+  height: 20vh;
 }
 
 h1 {
@@ -65,8 +65,7 @@ h2 {
   right: 0;
 }
 
-/* botões na versão desktop */
-#btnRestartD {
+#btnRestart {
   width: 150px;
   height: 50px;
   margin: 20px;
@@ -75,16 +74,15 @@ h2 {
   background-color: #ffb366;
   border: none;
   border-radius: 10px;
-  margin-top: 30px;
 }
 
-#btnRestartD:hover {
+#btnRestart:hover {
   transition: 0.5s;
   background-color: blueviolet;
   cursor: pointer;
 }
 
-#btnRestartWinsD {
+#btnRestartWins {
   width: 150px;
   height: 50px;
   margin: 20px;
@@ -93,23 +91,17 @@ h2 {
   background-color: blueviolet;
   border: none;
   border-radius: 10px;
-  margin-top: 30px;
 }
 
-#btnRestartWinsD:hover {
+#btnRestartWins:hover {
   transition: 0.5s;
   background-color: #ffb366;
   cursor: pointer;
 }
 
-
-/* os botões que tem display diferente na versao mobile ficarão escondidos */
-#btnRestartM{
-  display: none;
-}
-
-#btnRestartWinsM{
-  display: none;
+.buttons {
+  float: right;
+  transform: translate(80%);
 }
 
 .player_container {
@@ -126,16 +118,11 @@ h2 {
 }
 
 .structure {
-  /* margin-left: 550px; */
-  margin: 20px ;
+  margin-top: 15px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   align-items: flex-start;
-  /* width: 60vw; */
-}
-
-.stage{
-  width: 35vw;
+  /* width: 80vw; */
 }
 
 #noughtIcon,
@@ -196,53 +183,6 @@ input {
     margin: auto;
    
   }
-
-  #btnRestartM {
-    width: 150px;
-    height: 50px;
-    margin: 20px;
-    color: white;
-    font-size: 16px;
-    background-color: #ffb366;
-    border: none;
-    border-radius: 10px;
-    margin-top: 30px;
-  }
-  
-  #btnRestartM:hover {
-    transition: 0.5s;
-    background-color: blueviolet;
-    cursor: pointer;
-  }
-  
-  #btnRestartWinsM {
-    width: 150px;
-    height: 50px;
-    margin: 20px;
-    color: white;
-    font-size: 16px;
-    background-color: blueviolet;
-    border: none;
-    border-radius: 10px;
-    margin-top: 30px;
-  }
-  
-  #btnRestartWinsM:hover {
-    transition: 0.5s;
-    background-color: #ffb366;
-    cursor: pointer;
-  }
-  
-/* esconde os botões que são usados na versão mobile */
-  #btnRestartD{
-    display: none;
-  }
-
-  #btnRestartWinsD{
-    display: none;
-  }
-
-
 /* 
   h1 {
     display: none;
