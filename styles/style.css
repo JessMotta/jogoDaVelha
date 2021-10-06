@@ -7,7 +7,7 @@ body {
 }
 
 #logo {
-  height: 20vh;
+  height: 25vh;
 }
 
 h1 {
@@ -68,7 +68,7 @@ h2 {
 #btnRestart {
   width: 150px;
   height: 50px;
-  margin: 20px;
+  margin: 30px;
   color: white;
   font-size: 16px;
   background-color: #ffb366;
@@ -115,12 +115,13 @@ h2 {
   grid-template: 1fr / 1fr 1fr;
   justify-content: center;
   align-items: center;
+  margin-left: 40px;
 }
 
 .structure {
   margin-top: 15px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-start;
   /* width: 80vw; */
 }
