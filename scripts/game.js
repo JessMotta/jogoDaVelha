@@ -4,6 +4,7 @@ let board = ["", "", "", "", "", "", "", "", ""];
 let playerTime = 0;
 let gameOver = false;
 let tieGame = false;
+let restartedGame = false;
 
 // começa o jogador 1
 let firstPlayer = 0;
@@ -55,6 +56,7 @@ function handleMove(position) {
   }
 }
 
+// função para verificar se houye um ganhador na partida
 function isWin() {
   for (let i = 0; i < winStates.length; i++) {
     let seq = winStates[i];
@@ -79,6 +81,11 @@ function isWin() {
 function restartGame() {
   // reiniciar as variáveis
   board = ["", "", "", "", "", "", "", "", ""];
+  gameOver = false;
+  tieGame = false;
+  countTurn0 = 0;
+  countTurn1 = 0;
+
   // troca quem começa a partida no jogo seguinte
   if (firstPlayer == 0) {
     playerTime = 1;
@@ -87,9 +94,6 @@ function restartGame() {
     playerTime = 0;
     firstPlayer = 0;
   }
-  gameOver = false;
-  tieGame = false;
-  countTurn0 = 0;
-  countTurn1 = 0;
+  // chama a função para limpar o tabuleiro
   updateSquares();
 }

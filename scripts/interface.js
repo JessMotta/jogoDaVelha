@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 let ctPlayer1 = 0;
 let ctPlayer2 = 0;
 
-
 // salvar o vencedor da partida pa
 
 function handleClick(event) {
@@ -31,7 +30,6 @@ function handleClick(event) {
 
   let playerName = "";
 
-
   if (handleMove(position)) {
     // identifica e pontua o vencedor
     if (playerTime == 0) {
@@ -41,7 +39,6 @@ function handleClick(event) {
       ctPlayer2++;
       player2Wins.innerHTML = ctPlayer2;
     }
-
 
     // a mensagem vai aparecer 10ms depois da ultima jogada, assim o ultimo objeto adicionado aparece na tela, se não colocar o timeout a msg aparece mas o objeto não
     if (player1Name != "" || player2Name != "") {
@@ -60,7 +57,6 @@ function handleClick(event) {
       } else {
         playerName = "X";
       }
-
       setTimeout(() => {
         alert("O jogo acabou! \n O vencedor foi " + playerName);
       }, 20);
@@ -68,7 +64,6 @@ function handleClick(event) {
   }
   // verifica se houve empate no jogo
   if ((countTurn0 >= 5 || countTurn1 >= 5) && !gameOver) {
-    console.log(playerTime)
     setTimeout(() => {
       alert("O jogo empatou!");
     }, 20);
@@ -83,8 +78,19 @@ function updateSquare(position) {
   square.innerHTML = `<div class='${symbol}'></div>`;
 }
 
+// atualiza todo o board
 function updateSquares() {
+ // identificando os nomes do jogadores 
+  let player1 = document.getElementById("player1");
+  let player2 = document.getElementById("player2");
+  let player1Name = player1.value;
+  let player2Name = player2.value;
+  let playerName = "";
+
+  // mapeando os quadrados
   let squares = document.querySelectorAll(".square");
+  
+  // função para limpar o tabuleiro
   squares.forEach((square) => {
     let position = square.id;
     let symbol = board[position];
@@ -93,7 +99,28 @@ function updateSquares() {
       square.innerHTML = `<div class='${symbol}'></div>`;
     }
   });
-  alert("Jogo reiniciado");
+
+  // verifica a vez do jogador
+  if (player1Name != "" || player2Name != "") {
+    if (playerTime == 0) {
+      playerName = player1Name;
+    } else {
+      playerName = player2Name;
+    }
+
+    setTimeout(() => {
+      alert("O jogo foi reiniciado! \n Agora é a vez do jogador " + playerName);
+    }, 20);
+  } else if (player1Name == "" || player2Name == "") {
+    if (playerTime == 0) {
+      playerName = "O";
+    } else {
+      playerName = "X";
+    }
+    setTimeout(() => {
+      alert("O jogo foi reiniciado! \n Agora é a vez do jogador " + playerName);
+    }, 20);
+  }
 }
 
 // reseta as pontuações e limpa as variáveis ctPlayer1 e ctPlayer2
