@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,9 @@
 </head>
 
 <body>
-    <!-- <h1>Jogo da Velha</h1> -->
     <img id="logo" src="./assets/images/logo.png">
 
-
+<div class="structure">
     <div class="stage">
         <div>
             <div id="0" class="square">
@@ -37,28 +36,33 @@
         </div>
 
     </div>
-    <button id="btnRestart" onclick="restartGame()"> Reiniciar jogo</button>
-
 
     <div class="container">
         <div class="players">
             <h1>Jogadores</h1>
-            <input id="player1" type="text" placeholder="Jogador 1">
-            <input id="player2" type="text" placeholder="Jogador 2">
+            <div class="player_container">
+                <img id="noughtIcon" src="./assets/icons/nought.png">
+                <input id="player1" type="text" placeholder="Jogador 1">
+            </div>
+            <div class="player_container">
+                <img id="crossIcon" src="./assets/icons/cross.png">
+                <input id="player2" type="text" placeholder="Jogador 2">
+            </div>
+
+
         </div>
-        <!-- <button id="btnStart" onclick="startGame()">Iniciar</button> -->
         <div class="numberOfWins">
             <h1>Pontuação</h1>
             <h2 id="player1Wins"></h2>
             <h2 id="player2Wins"></h2>
         </div>
-        <button id="btnRestartWins" onclick="restartWins()"> Resetar Pontuação</button>
+
     </div>
+</div>
 
-
-
-
-
+ 
+        <button id="btnRestart" onclick="restartGame()"> Reiniciar jogo</button>
+        <button id="btnRestartWins" onclick="restartWins()"> Resetar pontuação</button>
 
 
     <!-- carrega primeiro o game pois a interface irá precisar dela  -->
