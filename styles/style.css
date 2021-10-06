@@ -65,7 +65,7 @@ h2 {
   right: 0;
 }
 
-#btnRestart{
+#btnRestart {
   width: 150px;
   height: 50px;
   margin: 20px;
@@ -76,14 +76,11 @@ h2 {
   border-radius: 10px;
 }
 
-#btnRestart:hover{
+#btnRestart:hover {
   transition: 0.5s;
   background-color: blueviolet;
   cursor: pointer;
 }
-
-
-
 
 #btnRestartWins {
   width: 150px;
@@ -113,14 +110,11 @@ h2 {
   align-items: center;
 }
 
-
 .container {
   display: grid;
   grid-template: 1fr / 1fr 1fr;
   justify-content: center;
   align-items: center;
-  
-  
 }
 
 .structure {
@@ -156,15 +150,46 @@ input {
   }
 
   #logo {
-    height: 20vh;
-    display: flex;
-    justify-content: flex-start;
+    height: 25vh;
+    /* display: flex;
+    justify-content: flex-start; */
   }
 
-  .players {
-    transform: translate(-10%, -420%);
-  }
   .stage {
-    margin-top: 50px;
+    margin-top: 15px;
   }
+  .structure {
+    text-align: center;
+    margin-top: 15px;
+   display: inline-block;
+  }
+
+ 
+
+  /* h2 {
+    margin-top: 20px;
+  } */
+
+
+
+  h1{
+    text-align: center;
+  }
+  .container {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+   
+  }
+/* 
+  h1 {
+    display: none;
+  } */
+
+  /* .players {
+    transform: translate(-10%, -420%);
+  } */
+  
 }
